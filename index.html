@@ -7,19 +7,20 @@
 	<title>To Do List</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
 	<script src="todolist.js" async></script>
 </head>
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-12">
+			<div class="col-12 list-item">
 				<ul>
 				</ul>
 			</div>
 			<div class="col-12">
-				<div id="message" style="display: none;"></div>
-				<form>
-					<input type="text" name="text-item" id="text-item" >
+				<div id="message"></div>
+				<form class="d-flex">
+					<input type="text" name="text-item" id="text-item" placeholder="Dodaj pozycję do listy">
 					<input type="reset" name="add-item" id="add-item" value="Add">
 				</form>
 			</div>

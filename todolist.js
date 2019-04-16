@@ -9,14 +9,14 @@ window.onload = function(){
 	addItem.onclick = function(){
 		var newItem = document.createElement("li");
 		var textItem = document.getElementById("text-item");
-		newItem.innerHTML = '<i class="far fa-check-circle"> </i>' + '<input type="text" class="item" value="' + textItem.value +'" disabled>' + '<i class="far fa-edit"></i>' + '<i class="far fa-trash-alt"></i>';
+		newItem.innerHTML = '<i class="far fa-check-circle"> </i>' + '<p>' + textItem.value + '</p>' + '<div><i class="far fa-edit"></i><i class="far fa-trash-alt"></i></div>';
 
 		var item = document.querySelector('.item');
 		var message = document.getElementById('message');
 
 		if ((textItem.value === "") || (textItem.value === " ")) {
 			message.style.display = "block";
-			message.textContent = "Puste pole";
+			message.textContent = "Puste pole!";
 		}
 		else{
 			listItem.appendChild(newItem);
