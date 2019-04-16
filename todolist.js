@@ -9,7 +9,16 @@ window.onload = function(){
 		var textItem = document.getElementById("text-item");
 		newItem.innerHTML = textItem.value;
 
-		listItem.appendChild(newItem);
+		if ((textItem.value === "") || (textItem.value === " ")) {
+			var message = document.getElementById('message');
+			message.style.display = "block";
+			message.textContent = "Puste pole";
+		}
+		else{
+			listItem.appendChild(newItem);
+		}
+		
+		console.log(typeof(textItem.value));
 		
 	};
 };
