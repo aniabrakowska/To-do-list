@@ -1,25 +1,35 @@
 
 
 
-function addCheck(){
-	var checks = document.getElementsByClassName("fa-check-circle");
-	/*Pętla przechodzi po wszystkich elementach kolekcji 
-	dodaje im nasłuchiwacz zdarzenia click
-	jeśli element zostanie kliknięty to sprawdza czy posiada klase check-item
-	jeśli nie posiada to ja dodaje a jeśli posiada to ja usuwa */
-	for (var check of checks) {
+/*function addCheck(){
+	var addChecks = document.getElementsByClassName("fa-check-circle");
+	//Pętla przechodzi po wszystkich elementach kolekcji 
+	//dodaje im nasłuchiwacz zdarzenia click
+	//jeśli element zostanie kliknięty to sprawdza czy posiada klase check-item
+	//jeśli nie posiada to ja dodaje a jeśli posiada to ja usuwa 
+	for (const check of addChecks) {
 		check.addEventListener("click", function(){
 
-			if(check.parentNode.classList.contains('check-item') === false)
-			check.parentNode.classList.add('check-item');
-			else check.parentNode.classList.remove('check-item');
+			if(this.parentNode.classList.contains('check-item') === false)
+			{this.parentNode.classList.add('check-item');}
+			else this.parentNode.classList.remove('check-item');
 
 		} );
-	    //check.style.color = "red";
-	    console.log(check.parentNode);
 	};
 
-};
+};*/
+
+/*function deleteCheck(){
+	var deleteChecks = document.getElementsByClassName("fa-trash-alt");
+	for (var delcheck of deleteChecks) {
+		delcheck.addEventListener("click", function(){
+
+			console.log(this.parentNode);
+
+		} );
+	};
+};*/
+
 window.onload = function(){
 	
 	var listItem = document.querySelector("ul");
@@ -42,7 +52,15 @@ window.onload = function(){
 		else{
 			listItem.appendChild(newItem);
 			message.style.display = "none";
-			addCheck();
+			//addCheck();
+			//deleteCheck();
+			newItem.addEventListener("click", function(){
+
+				if(this.classList.contains('check-item') === false)
+				{this.classList.add('check-item');}
+				else this.classList.remove('check-item');
+
+			} );
 		}
 		
 	};
