@@ -45,9 +45,7 @@ function deleteItem(x){
 	var iconDelete = x.lastChild; 
 	console.log(iconDelete);
 	iconDelete.addEventListener("click",function(){
-
 		x.parentNode.removeChild(x);
-
 	});
 
 };
