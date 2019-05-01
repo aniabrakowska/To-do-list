@@ -33,10 +33,18 @@
 function addCheck(x){
 	var iconCheck = x.firstChild; 
 	iconCheck.addEventListener("click", function(){
+		console.log(iconCheck);
 
-		if(x.classList.contains('check-item') === false)
-		{x.classList.add('check-item');}
-		else x.classList.remove('check-item');
+		if(x.classList.contains('check-item') === false){
+			x.classList.add('check-item');
+			iconCheck.classList.remove('far');
+			iconCheck.classList.add('fas');
+		}
+		else {
+			x.classList.remove('check-item');
+			iconCheck.classList.remove('fas');
+			iconCheck.classList.add('far');
+		}
 
 	} );
 };
