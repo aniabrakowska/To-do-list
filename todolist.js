@@ -43,11 +43,48 @@ function addCheck(x){
 
 function deleteItem(x){
 	var iconDelete = x.lastChild; 
-	console.log(iconDelete);
 	iconDelete.addEventListener("click",function(){
 		x.parentNode.removeChild(x);
 	});
 
+};
+
+function editItem(x){
+	var iconEdit = x.children[2]; //ikona edycji elementu
+	iconEdit.addEventListener("click",function(){
+
+		
+		var textElement = x.children[1]; // element <p> - treść itemu
+		//utworzenie inputa i nadanie mu atrybutów 
+		var editField = document.createElement("input"); 
+		editField.setAttribute("type","text");
+		editField.setAttribute("name","edit-item");
+		editField.setAttribute("value", textElement.textContent);
+		//utworzenie ikony zakończenia edycji
+		var addIcon = document.createElement("i");
+		addIcon.classList.add('fas','fa-check');
+		//dodanie elementu addItem przed textElement w DOM
+		x.insertBefore(addIcon,textElement);
+		//dodanie elementu editField przed addIcon w DOM
+		x.insertBefore(editField, addIcon);
+		
+		iconEdit.style.display = "none";
+		textElement.style.display = "none";
+
+		addIcon.addEventListener("click", function(){
+			var newText = editField.value;
+			textElement.style.display = "block";
+			textElement.textContent = newText;
+
+			addIcon.parentNode.removeChild(addIcon);
+			editField.parentNode.removeChild(editField);
+
+			iconEdit.style.display = "block";
+
+		});
+		
+		
+	});
 };
 
 window.onload = function(){
@@ -73,6 +110,7 @@ window.onload = function(){
 			message.style.display = "none";
 			addCheck(newItem);
 			deleteItem(newItem);
+			editItem(newItem);
 		}
 	};
 };

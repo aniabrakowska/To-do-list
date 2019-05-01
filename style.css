@@ -16,8 +16,10 @@ input[id=add-item]:hover { cursor: pointer; }
 
 .check-item { color: green!important; border-color: green!important; }
 
-::-webkit-input-placeholder { color: #EDEEC0; font-style: italic; }
-:-moz-placeholder { color: #EDEEC0; font-style: italic; }/* Firefox 18- */
-::-moz-placeholder { color: #EDEEC0; font-style: italic; }/* Firefox 19+ */
-:-ms-input-placeholder { color: #EDEEC0; font-style: italic; }
+input[id=text-item]::-webkit-input-placeholder { color: #EDEEC0; font-style: italic; }
+input[id=text-item]:-moz-placeholder { color: #EDEEC0; font-style: italic; }/* Firefox 18- */
+input[id=text-item]::-moz-placeholder { color: #EDEEC0; font-style: italic; }/* Firefox 19+ */
+input[id=text-item]:-ms-input-placeholder { color: #EDEEC0; font-style: italic; }
 
+input[name=edit-item] { background-color: transparent; width: 100%; border: 0; font-style: italic; color: #735d44; border-bottom: 1px solid #735d44; }
+input[name=edit-item]:focus { outline: none; }
