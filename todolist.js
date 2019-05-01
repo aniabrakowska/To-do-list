@@ -30,6 +30,28 @@
 	};
 };*/
 
+function addCheck(x){
+	var iconCheck = x.firstChild; 
+	iconCheck.addEventListener("click", function(){
+
+		if(x.classList.contains('check-item') === false)
+		{x.classList.add('check-item');}
+		else x.classList.remove('check-item');
+
+	} );
+};
+
+function deleteItem(x){
+	var iconDelete = x.lastChild; 
+	console.log(iconDelete);
+	iconDelete.addEventListener("click",function(){
+
+		x.parentNode.removeChild(x);
+
+	});
+
+};
+
 window.onload = function(){
 	
 	var listItem = document.querySelector("ul");
@@ -39,9 +61,8 @@ window.onload = function(){
 	// i dodanie nowego elementy <li>
 	addItem.onclick = function(){
 		var newItem = document.createElement("li");
-		//newitem.classList.add("");
 		var textItem = document.getElementById("text-item");
-		newItem.innerHTML = '<i class="far fa-check-circle"> </i>' + '<p>' + textItem.value + '</p>' + '<div><i class="far fa-edit"></i><i class="far fa-trash-alt"></i></div>';
+		newItem.innerHTML = '<i class="far fa-check-circle"> </i>' + '<p>' + textItem.value + '</p>' + '<i class="far fa-edit"></i><i class="far fa-trash-alt"></i>';
 
 		var message = document.getElementById('message');
 
@@ -52,20 +73,10 @@ window.onload = function(){
 		else{
 			listItem.appendChild(newItem);
 			message.style.display = "none";
-			//addCheck();
-			//deleteCheck();
-			newItem.addEventListener("click", function(){
-
-				if(this.classList.contains('check-item') === false)
-				{this.classList.add('check-item');}
-				else this.classList.remove('check-item');
-
-			} );
+			addCheck(newItem);
+			deleteItem(newItem);
 		}
-		
 	};
-	
-	
 };
 
 

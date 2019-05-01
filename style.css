@@ -1,12 +1,12 @@
 body { background-color: #9B9B93; color: #39393A; }
 p{ margin-bottom: 0; }
-.fa, .fab, .fal, .far, .fas{ line-height: unset; }
+.fa, .fab, .fal, .far, .fas{ line-height: unset; height: 24px; padding-left: 5px; }
 .fa:hover, .fab:hover, .fal:hover, .far:hover, .fas:hover {cursor: pointer; color: #5f492c; }
 .list-item ul { list-style: none; padding-left: 5px;}
 .list-item ul li, .list-item ul li div { display: flex; }
 .list-item ul li { background-color: #b9a78d; padding: 5px; margin: 5px 0; border: 2px solid #887458; color: #887458; border-radius: 10px; }
 .check { background-color: #9dbda3!important; border-color: #57715c!important; color: #57715c!important; }
-.list-item li i:nth-child(1) { padding-right: 10px; }
+.list-item li i:nth-child(1) { padding-right: 5px; }
 .list-item li p { display: inline-block; width: 100%; }
 #message { display: none; font-size: 12px; font-weight: 600; font-style: italic; color: #885454; }
 input[id=text-item]{ width: 100%; background-color: transparent; color: #EDEEC0; border: 0; border-bottom: 2px solid #EDEEC0; margin: 0 10px; padding-left: 10px; }
@@ -14,7 +14,7 @@ input[id=text-item]:focus { outline: none; }
 input[id=add-item]{ background-color: transparent; font-weight: 600; border: 2px solid #EDEEC0; color: #EDEEC0; border-radius: 10px; width: 100px; height: 30px; }
 input[id=add-item]:hover { cursor: pointer; }
 
-.check-item { color: green!important; }
+.check-item { color: green!important; border-color: green!important; }
 
 ::-webkit-input-placeholder { color: #EDEEC0; font-style: italic; }
 :-moz-placeholder { color: #EDEEC0; font-style: italic; }/* Firefox 18- */
